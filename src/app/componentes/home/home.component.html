@@ -1,0 +1,65 @@
+<div class="contenedor">
+    <div class="contenedor-header">
+
+    </div>
+    <div class="contenedor-body">
+        <div class="contenedor-todo">
+            <div class="titulo-modo">
+                <h1>TODO</h1>
+                <img src="../../../assets/images/icon-moon.svg" alt="">
+            </div>
+            <div class="contenedor-input">
+                <input type="text" placeholder="Nueva tarea...">
+            </div>
+            <ul class="contenedor-tareas">
+                <li (mouseover)="btnEliminar()" (mouseleave)="ocultarbtn()">
+                    <div class="contenedor-checkbox">
+                        <label class="container">
+                            <input type="checkbox" checked="checked">
+                            <div class="checkmark"></div>
+                          </label>
+                          <p>tarea</p>
+                    </div>
+                    <div class="btn-eliminar" [ngClass]="{'ocultarBtn': ocultarBoton}">
+                        <button></button>
+                    </div>
+                </li>
+                <li (mouseover)="btnEliminar()" (mouseleave)="ocultarbtn()">
+                    <div class="contenedor-checkbox">
+                        <label class="container">
+                            <input type="checkbox" checked="checked">
+                            <div class="checkmark"></div>
+                          </label>
+                          <p>tarea</p>
+                    </div>
+                    <div class="btn-eliminar" [ngClass]="{'ocultarBtn': ocultarBoton}">
+                        <button></button>
+                    </div>
+                </li>
+
+                <li (mouseover)="btnEliminar()" (mouseleave)="ocultarbtn()">
+                    <div class="contenedor-checkbox">
+                        <label class="container">
+                            <input type="checkbox" checked="checked">
+                            <div class="checkmark"></div>
+                          </label>
+                          <p>tarea</p>
+                    </div>
+                    <div class="btn-eliminar" [ngClass]="{'ocultarBtn': ocultarBoton}">
+                        <button></button>
+                    </div>
+                </li>
+              
+            </ul>
+            <ul class="opciones">
+                <li>items left</li>
+                <div class="opciones-center">
+                    <li>All</li>
+                    <li>Active</li>
+                    <li>completed</li>
+                </div>
+                <li class="clear">Clear Completed</li>
+            </ul>
+        </div>
+    </div>
+</div>
