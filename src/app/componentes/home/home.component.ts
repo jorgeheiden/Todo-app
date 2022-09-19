@@ -32,13 +32,14 @@ export class HomeComponent implements OnInit {
 
   }
 
-  btnEliminar(tarea: any) {
-    console.log(tarea);
-    tarea.hover = false;
+  btnEliminarMostrar(tarea: any) {
+    tarea.hover = false
   }
-  ocultarbtn() {
-    this.ocultarBoton = true;
+  btnEliminarOcultar(tarea:any){
+    tarea.hover = true
   }
-
-  
+  eliminarTarea(tarea:any){
+    const indice = this.tareas.indexOf(tarea)
+    this.tareas.splice(indice, 1)
+  }
 }
