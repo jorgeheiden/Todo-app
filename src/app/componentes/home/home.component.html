@@ -12,7 +12,7 @@
                 <input type="text" (keyup.enter)="inputEnter(inputTareas.value)" [formControl]="inputTareas" placeholder="Nueva tarea...">
             </div>
             <ul class="contenedor-tareas">
-                <li *ngFor="let tarea of tareas" (mouseover)="btnEliminarMostrar(tarea)" (mouseleave)="btnEliminarOcultar(tarea)">
+                <li  *ngFor="let tarea of tareas" [ngClass]="{'ocultarTarea': tarea.ocultar}" (mouseover)="btnEliminarMostrar(tarea)" (mouseleave)="btnEliminarOcultar(tarea)" >
                     <div class="contenedor-checkbox">
                         <label class="container">
                             <input type="checkbox"  [checked]="tarea.estado" (change)="estado(tarea, $event)">
@@ -53,10 +53,10 @@
               
             </ul>
             <ul class="opciones">
-                <li>items left</li>
+                <li>{{itemsLeft}} items left</li>
                 <div class="opciones-center">
                     <li>All</li>
-                    <li>Active</li>
+                    <li (click)="active()">Active</li>
                     <li>completed</li>
                 </div>
                 <li class="clear">Clear Completed</li>
