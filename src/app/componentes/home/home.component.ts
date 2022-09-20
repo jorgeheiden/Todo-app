@@ -1,3 +1,4 @@
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -14,6 +15,10 @@ export class HomeComponent implements OnInit {
   ];
   ocultarBoton = true;
   itemsLeft!: number;
+
+  estado1 = true
+  estado2 = false
+
   constructor() {}
 
   inputTareas = new FormControl();
@@ -52,9 +57,36 @@ export class HomeComponent implements OnInit {
   itemsLeftFunction() {
     this.itemsLeft = this.tareas.length;
   }
-  active() {
-    this.tareas
-      .filter((elemento) => elemento.estado)
-      .map((elemento) => (elemento.ocultar = true));
+  mostrarTodasLasTareas(){
+    this.tareas.map( elemento => elemento.ocultar = false)
   }
+  tareasActivas() {
+      this.tareas.map( elemento =>{
+      if(elemento.estado === true){
+        elemento.ocultar = true
+      }
+      else if(elemento.estado === false){
+        elemento.ocultar = false
+      }
+    })
+  }
+  tareasCompletadas(){
+    this.tareas.map( elemento =>{
+      if( elemento.estado === true){
+        elemento.ocultar = false
+      }
+      else if( elemento.estado === false){
+        elemento.ocultar = true
+      }
+    })
+  }
+  limpiarTareasCompletadas(){
+    this.tareas = this.tareas.filter( elementos =>{
+      return elementos.estado === false
+    })
+  }
+  modoNoche(){
+    this.estado1 = false
+  }
+
 }
