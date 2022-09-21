@@ -2,57 +2,33 @@
     <div class="contenedor-header" [ngClass]="{'background1': estado1, 'background2': estado2}" >
 
     </div>
-    <div class="contenedor-body">
+    <div class="contenedor-body" [ngClass]="{'contenedor-body-background-light': estado1, 'contenedor-body-background-dark': estado2}">
         <div class="contenedor-todo">
             <div class="titulo-modo">
                 <h1>TODO</h1>
                 <img (click)="modoNoche()" src="../../../assets/images/icon-moon.svg" alt="">
             </div>
             <div class="contenedor-input">
-                <input type="text" (keyup.enter)="inputEnter(inputTareas.value)" [formControl]="inputTareas" placeholder="Nueva tarea...">
+                <input type="text" [ngClass]="{'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2, 'font-color-light':estado1, 'font-color-dark':estado2, 'placeholder-color-light':estado1, 'placeholder-color-dark':estado2 }" (keyup.enter)="inputEnter(inputTareas.value)" [formControl]="inputTareas" placeholder="Nueva tarea...">
             </div>
             <ul class="contenedor-tareas">
-                <li  *ngFor="let tarea of tareas" [ngClass]="{'ocultarTarea': tarea.ocultar}" (mouseover)="btnEliminarMostrar(tarea)" (mouseleave)="btnEliminarOcultar(tarea)" >
+                <li  *ngFor="let tarea of tareas" [ngClass]="{'ocultarTarea': tarea.ocultar, 'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2}" (mouseover)="btnEliminarMostrar(tarea)" (mouseleave)="btnEliminarOcultar(tarea)" >
                     <div class="contenedor-checkbox">
                         <label class="container">
                             <input type="checkbox"  [checked]="tarea.estado" (change)="estado(tarea, $event)">
-                            <div class="checkmark"></div>
+                            <div class="checkmark" [ngClass]="{'checkmark-background-dark':estado2}"></div>
                           </label>
-                          <p [ngClass]="{'tareas-completadas': tarea.estado}" >{{tarea.tarea}}</p>
+                          <p [ngClass]="{'tareas-completadas': tarea.estado, 'font-color-light':estado1, 'font-color-dark':estado2}" >{{tarea.tarea}}</p>
                     </div>
                     <div class="btn-eliminar" [ngClass]="{'ocultarBtn': tarea.hover}">
                         <button (click)="eliminarTarea(tarea)"></button>
                     </div>
                 </li>
 
-                <li >
-                    <div class="contenedor-checkbox">
-                        <label class="container">
-                            <input type="checkbox" checked="checked">
-                            <div class="checkmark"></div>
-                          </label>
-                          <p>fijos</p>
-                    </div>
-                    <div class="btn-eliminar" [ngClass]="{'ocultarBtn': ocultarBoton}">
-                        <button></button>
-                    </div>
-                </li>
-
-                <li >
-                    <div class="contenedor-checkbox">
-                        <label class="container">
-                            <input type="checkbox" checked="checked">
-                            <div class="checkmark"></div>
-                          </label>
-                          <p>tarea</p>
-                    </div>
-                    <div class="btn-eliminar" [ngClass]="{'ocultarBtn': ocultarBoton}">
-                        <button></button>
-                    </div>
-                </li>
+                
               
             </ul>
-            <ul class="opciones">
+            <ul class="opciones" [ngClass]="{'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2, 'font-color-light':estado1, 'font-color-dark':estado2}">
                 <li>{{itemsLeft}} items left</li>
                 <div class="opciones-center">
                     <li (click)="mostrarTodasLasTareas()">All</li>

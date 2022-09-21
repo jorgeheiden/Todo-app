@@ -86,7 +86,13 @@ export class HomeComponent implements OnInit {
     })
   }
   modoNoche(){
-    this.estado1 = false
+    if(this.estado1 === true){
+      this.estado1 = false
+      this.estado2 = true
+    } else{
+      this.estado1 = true
+      this.estado2 = false
+    }
   }
 
 }
