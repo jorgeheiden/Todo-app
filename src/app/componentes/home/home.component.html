@@ -6,7 +6,7 @@
         <div class="contenedor-todo">
             <div class="titulo-modo">
                 <h1>TODO</h1>
-                <img (click)="modoNoche()" src="../../../assets/images/icon-moon.svg" alt="">
+                <img (click)="modoNoche()" [src]="icono" alt="">
             </div>
             <div class="contenedor-input">
                 <input type="text" [ngClass]="{'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2, 'font-color-light':estado1, 'font-color-dark':estado2, 'placeholder-color-light':estado1, 'placeholder-color-dark':estado2 }" (keyup.enter)="inputEnter(inputTareas.value)" [formControl]="inputTareas" placeholder="Nueva tarea...">
@@ -24,10 +24,8 @@
                         <button (click)="eliminarTarea(tarea)"></button>
                     </div>
                 </li>
-
-                
-              
             </ul>
+            
             <ul class="opciones" [ngClass]="{'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2, 'font-color-light':estado1, 'font-color-dark':estado2}">
                 <li>{{itemsLeft}} items left</li>
                 <div class="opciones-center">

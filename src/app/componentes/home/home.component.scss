@@ -62,12 +62,13 @@
   outline: none;
   border-radius: 4px;
   margin: 0.5rem 0 1.3rem 0;
-  background-image: url(../../../assets/images/icons8-circled-thin-40.png);
+  background-image: url(../../../assets/images/icons8-circled-thin-90.png);
   background-repeat: no-repeat;
-  background-position: 3%;
-  background-size: 1.5rem;
-  padding-left: 3.5rem;
-  font-size: 1rem;
+  background-position: 0.8rem;
+  background-size: 1.93rem;
+  padding-left: 3.6rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 .contenedor-input img {
   position: absolute;
@@ -102,8 +103,9 @@
   align-items: center;
 }
 .contenedor-tareas p{
-  margin-left: 1rem;
-  
+  margin-left: 1.1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 .tareas-completadas{
   text-decoration: line-through;
@@ -155,9 +157,10 @@
   background-color: hsl(0, 0%, 97%);
   border: 1px solid rgb(107, 107, 107);
   border-radius: 25px;
-  transition: 0.15s;
+  //transition: 0.15s;
   margin-left: 1rem;
 }
+
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
@@ -209,8 +212,14 @@
   margin: 0 0.5rem 0 0.5rem;
   cursor: pointer;
 }
+.opciones-center li:hover{
+  color: hsl(220, 100%, 53%)
+}
 .clear {
   cursor: pointer;
+}
+.clear:hover{
+  color: hsl(220, 100%, 53%)
 }
 .opciones li {
   list-style-type: none;
@@ -235,4 +244,23 @@
 .checkmark-background-dark{
   background-color: hsl(235, 24%, 19%);
   
+}
+
+//Responsive
+@media only screen and (max-width: 600px) {
+  .contenedor-todo{
+    width: 90%;
+  }
+  .background1{
+    background-image: url(../../../assets/images/bg-mobile-light.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .background2{
+    background-image: url(../../../assets/images/bg-mobile-dark.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

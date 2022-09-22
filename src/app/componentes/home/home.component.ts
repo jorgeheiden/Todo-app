@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   estado1 = true
   estado2 = false
+  icono = "../../../assets/images/icon-moon.svg"
 
   constructor() {}
 
@@ -89,9 +90,12 @@ export class HomeComponent implements OnInit {
     if(this.estado1 === true){
       this.estado1 = false
       this.estado2 = true
+      this.icono = "../../../assets/images/icon-sun.svg"
+
     } else{
       this.estado1 = true
       this.estado2 = false
+      this.icono = "../../../assets/images/icon-moon.svg"
     }
   }
 
