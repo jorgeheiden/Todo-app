@@ -9,9 +9,9 @@ import { FormControl } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   tareas = [
-    { tarea: 'tarea 1', estado: false, hover: true, ocultar: false },
-    { tarea: 'tarea 2', estado: true, hover: true, ocultar: false },
-    { tarea: 'tarea 3', estado: true, hover: true, ocultar: false },
+    { tarea: 'Tarea de prueba 1', estado: false, hover: true, ocultar: false },
+    { tarea: 'Tarea de prueba 2', estado: true, hover: true, ocultar: false },
+    { tarea: 'Tarea de prueba 3', estado: true, hover: true, ocultar: false },
   ];
   ocultarBoton = true;
   itemsLeft!: number;

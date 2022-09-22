@@ -31,9 +31,15 @@
                 <div class="opciones-center">
                     <li (click)="mostrarTodasLasTareas()">All</li>
                     <li (click)="tareasActivas()">Active</li>
-                    <li (click)="tareasCompletadas()">completed</li>
+                    <li (click)="tareasCompletadas()">Completed</li>
                 </div>
                 <li class="clear" (click)="limpiarTareasCompletadas()">Clear Completed</li>
+            </ul>
+
+            <ul class="opciones-center-mobile" [ngClass]="{'contenedor-tareas-li-background-light':estado1, 'contenedor-tareas-li-background-dark':estado2, 'font-color-light':estado1, 'font-color-dark':estado2}">
+                <li (click)="mostrarTodasLasTareas()" >All</li>
+                <li (click)="tareasActivas()" >Active</li>
+                <li (click)="tareasCompletadas()" >Completed</li>
             </ul>
         </div>
     </div>
