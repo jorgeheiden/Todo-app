@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   estado1 = true
   estado2 = false
   icono = "../../../assets/images/icon-moon.svg"
+  itemTarea!:any
+  localStorageValues!:any
 
   constructor() {}
 
@@ -27,18 +29,27 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemsLeftFunction();
+  
+    this.localStorageValues = localStorage.getItem("tareas")
+    this.tareas = JSON.parse(this.localStorageValues || [])
   }
-  inputEnter(tarea: any) {
-    this.tareas.push({
-      tarea: tarea,
+
+
+  inputEnter(data: any) {
+    this.itemTarea = {
+      tarea: data,
       estado: false,
       hover: true,
-      ocultar: false,
-    });
-    console.log(tarea);
+      ocultar: false
+    }
+    this.tareas.push(this.itemTarea)
+    console.log(data);
     //Vacia el input, mediante un reset() del FormContro()
     this.inputTareas.reset();
     this.itemsLeftFunction();
+    //LocalStorage
+    localStorage.setItem("tareas", JSON.stringify(this.tareas))
+    
   }
   estado(tarea: any, evento: any) {
     this.tareas[this.tareas.indexOf(tarea)].estado = evento.target.checked;
@@ -85,6 +96,7 @@ export class HomeComponent implements OnInit {
     this.tareas = this.tareas.filter( elementos =>{
       return elementos.estado === false
     })
+    localStorage.setItem("tareas", JSON.stringify(this.tareas))
   }
   modoNoche(){
     if(this.estado1 === true){
