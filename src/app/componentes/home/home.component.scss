@@ -266,6 +266,10 @@
 @media only screen and (max-width: 600px) {
   .contenedor-todo{
     width: 90%;
+    top: 10%;
+  }
+  .contenedor-tareas li{
+    height: 4rem;
   }
   .background1{
     background-image: url(../../../assets/images/bg-mobile-light.jpg);
@@ -279,10 +283,14 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .opciones{
+    min-height: 4rem;
+  }
   .opciones-center{
     display: none;
   }
   .opciones-center-mobile{
     display: flex;
+    height: 3.5rem;
   }
 }
