@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
   }
   estado(tarea: any, evento: any) {
     this.tareas[this.tareas.indexOf(tarea)].estado = evento.target.checked;
+    localStorage.setItem("tareas", JSON.stringify(this.tareas))
   }
 
   btnEliminarMostrar(tarea: any) {
