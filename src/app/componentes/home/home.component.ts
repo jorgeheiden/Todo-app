@@ -70,8 +70,7 @@ export class HomeComponent implements OnInit {
   }
   itemsLeftFunction() {
     this.itemsLeft = this.tareas.length;
-    
-    
+     
   }
   mostrarTodasLasTareas(){
     this.tareas.map( elemento => elemento.ocultar = false)
@@ -101,6 +100,7 @@ export class HomeComponent implements OnInit {
       return elementos.estado === false
     })
     localStorage.setItem("tareas", JSON.stringify(this.tareas))
+    this.itemsLeftFunction();
   }
   modoNoche(){
     if(this.estado1 === true){
