@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
     const indice = this.tareas.indexOf(tarea);
     this.tareas.splice(indice, 1);
     this.itemsLeftFunction();
+    localStorage.setItem("tareas", JSON.stringify(this.tareas))
   }
   itemsLeftFunction() {
     this.itemsLeft = this.tareas.length;
