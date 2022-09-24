@@ -29,10 +29,9 @@ export class HomeComponent implements OnInit {
   checkbox = new FormControl();
 
   ngOnInit(): void {
-    this.itemsLeftFunction();
-  
     this.localStorageValues = localStorage.getItem("tareas")
     this.tareas = JSON.parse(this.localStorageValues || [])
+    this.itemsLeftFunction();
   }
 
 
@@ -47,9 +46,9 @@ export class HomeComponent implements OnInit {
     console.log(data);
     //Vacia el input, mediante un reset() del FormContro()
     this.inputTareas.reset();
-    this.itemsLeftFunction();
     //LocalStorage
     localStorage.setItem("tareas", JSON.stringify(this.tareas))
+    this.itemsLeftFunction();
     
   }
   estado(tarea: any, evento: any) {
@@ -71,6 +70,8 @@ export class HomeComponent implements OnInit {
   }
   itemsLeftFunction() {
     this.itemsLeft = this.tareas.length;
+    
+    
   }
   mostrarTodasLasTareas(){
     this.tareas.map( elemento => elemento.ocultar = false)
